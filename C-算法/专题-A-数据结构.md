@@ -64,7 +64,7 @@ public:
         return max(TreeDepth(root->left), TreeDepth(root->right)) + 1;
     }
 };
-//suitable for C++ above 
+//suitable for C++11 above 
 //visual studio 2017 does not support max(),because windows.h
 class Solution{
 public:
