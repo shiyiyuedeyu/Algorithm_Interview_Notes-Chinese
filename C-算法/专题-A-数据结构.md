@@ -64,6 +64,16 @@ public:
         return max(TreeDepth(root->left), TreeDepth(root->right)) + 1;
     }
 };
+//suitable for C++ above 
+//visual studio 2017 does not support max(),because windows.h
+class Solution{
+public:
+    int TreeDepth(TreeNode* root){
+        if (root == nullptr) return 0;
+        
+        return max(TreeDepth(root->left), TreeDepth(root->right)) + 1;
+    }
+}
 ```
 
 ## 二叉树的宽度
