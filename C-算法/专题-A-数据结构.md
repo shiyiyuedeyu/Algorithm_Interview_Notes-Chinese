@@ -110,6 +110,40 @@ public:
         return ans;
     }
 };
+
+//additional 《编程之美》：分层遍历二叉树代码
+#include<vector>
+#include<iostream>
+using namespace std;
+struct Node
+{
+	int data;//节点中的数据
+	Node* lChild;//左子指针
+	Node* rChild;//右子指针
+};
+
+//按层次遍历二叉树
+void PrintNodeByLevel(Node* root) {
+	if (root == nullptr) return;
+
+	vector<Node*> vec;//
+	vec.push_back(root);
+	int cur = 0;
+	int last = 1;
+	while (cur < vec.size())
+	{
+		last = vec.size();
+
+		while (cur < last)
+		{
+			cout << vec[cur]->data << " ";
+			if (vec[cur]->lChild) vec.push_back(vec[cur]->lChild);
+			if (vec[cur]->rChild) vec.push_back(vec[cur]->rChild);
+			cur++;
+		}
+		cout << endl;
+	}
+}
 ```
 
 ### 二叉树最大宽度（LeetCode）
